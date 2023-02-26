@@ -10,7 +10,7 @@ const Output = (props) => {
         <div className="cv_side w-1/3 px-3 py-3 bg-gray-100">
           {/* Name */}
 
-          <div className="w-fit uppercase border-2 font-bold text-blue-700 text-xl">
+          <div className="w-fit uppercase border-2 tracking-wide font-bold text-blue-700 text-xl">
             {props.inputData.firstName}
             <br />
             {props.inputData.lastName}
@@ -18,7 +18,7 @@ const Output = (props) => {
 
           {/* Job Title */}
 
-          <div className="uppercase border-2 text-base w-[70%] my-1">
+          <div className="uppercase border-2 text-base w-fit my-1">
             {props.inputData.job}
           </div>
 
@@ -63,7 +63,26 @@ const Output = (props) => {
             </div>
           </section>
         </div>
-        <div className="cv_main w-2/3 bg-blue-500"></div>
+        <div className="cv_main w-2/3  px-3 py-3">
+          {/* About */}
+
+          <section className="pb-1 border-b-2 w-full">
+            <h2 className="uppercase font-bold text-blue-700 tracking-wide m-1 w-[60%]">
+              about me
+            </h2>
+            <div className="text-sm ml-1">{props.inputData.about}</div>
+          </section>
+
+          {/* Education */}
+
+          <section className="pb-1 border-b-2 w-full">
+            <h2 className="uppercase font-bold text-blue-700 tracking-wide m-1 w-[60%]">
+              Education
+            </h2>
+            <div className="text-sm ml-1"></div>
+            {props.inputData.education}
+          </section>
+        </div>
       </div>
     </div>
   );
