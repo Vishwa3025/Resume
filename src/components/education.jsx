@@ -13,7 +13,7 @@ const Education = (props) => {
         onClick={toggleDropdown3}>
         Education
         <i
-          className={`px-4 py-2 hover:scale-[1.3] transition duration-300 ease-in-out fa-solid fa-circle-chevron-${
+          className={`px-4 py-2 hover:scale-[1.3] transition duration-300 ease-in-out text-xs fa-solid fa-chevron-${
             educationOpen ? "up" : "down"
           }`}
         />

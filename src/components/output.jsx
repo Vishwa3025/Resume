@@ -25,7 +25,7 @@ const Output = (props) => {
           {/* Contact */}
 
           <section>
-            <h2 className="uppercase font-bold my-1">Contact</h2>
+            <h2 className="uppercase text-red-700 font-bold my-1">Contact</h2>
             <div className="flex flex-col text-xs">
               <div className="flex">
                 <div className="p-0.5 m-0.5">
@@ -51,7 +51,7 @@ const Output = (props) => {
           {/* Skills */}
 
           <section>
-            <h2 className="uppercase font-bold my-3 w-[60%]">
+            <h2 className="uppercase text-red-700 font-bold my-3 w-[60%]">
               professional skills
             </h2>
             <div className="grid grid-cols-3 gap-1 text-xs">
@@ -67,16 +67,18 @@ const Output = (props) => {
           {/* About */}
 
           <section className="pb-1 border-b-2 w-full">
-            <h2 className="uppercase font-bold text-blue-700 tracking-wide m-1 w-[60%]">
+            <h2 className="uppercase font-bold text-red-700 tracking-wide m-1 w-[60%]">
               about me
             </h2>
-            <div className="text-sm ml-1">{props.inputData.about}</div>
+            <div className="text-sm text-white ml-1">
+              {props.inputData.about}
+            </div>
           </section>
 
           {/* Education */}
 
           <section className="pb-1 border-b-2 w-full">
-            <h2 className="uppercase font-bold text-blue-700 tracking-wide m-1 w-[60%]">
+            <h2 className="uppercase font-bold text-red-700 tracking-wide m-1 w-[60%]">
               Education
             </h2>
             <div className="text-sm ml-1"></div>

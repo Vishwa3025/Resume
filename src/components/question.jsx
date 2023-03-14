@@ -1,15 +1,15 @@
 import React, { useState } from "react";
-import Output from "./output";
+
 import Education from "./education";
 import PersonalDetails from "./personal_details";
 import Skills from "./skills";
-import Projects from "./projects";
+import ResumeBuilder from "./experience";
 
 const Question = (props) => {
   return (
     <div>
       <div className="uppercase">
-        <div className="text-2xl font-bold p-2">cv settings</div>
+        <div className="text-2xl text-white font-bold p-2">cv settings</div>
         <button className="py-1 px-3 rounded-md drop-shadow-sm mx-4 my-6 border">
           RESET CV
         </button>
@@ -30,9 +30,9 @@ const Question = (props) => {
 
       <Education onChange={props.onChange} />
 
-      {/* Projects */}
+      {/* Experience */}
 
-      <Projects onChange={props.onChange} />
+      {/* <ResumeBuilder onChange={props.onChange} /> */}
     </div>
   );
 };

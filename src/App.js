@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import jspdf from 'jspdf';
+import "./App.css";
 import html2canvas from 'html2canvas';
 import Output from './components/output';
 import Question from "./components/question";
@@ -32,7 +33,7 @@ class App extends Component {
   render() {
     return (
       <div className="m-0 flex">
-        <div className="w-1/4 p-2 bg-gray-50 h-auto m-2"><Question onChange={this.handleChange} /></div>
+        <div className="w-1/4 p-2 ques h-auto m-2"><Question onChange={this.handleChange} /></div>
         <div className='w-3/4 flex-col'>
           <div className="p-2 border-4 w-fit h-fit m-2" ref="downloadRef">
             <Output ref="downloadRef" inputData={this.state.inputData} />
