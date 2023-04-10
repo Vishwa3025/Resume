@@ -3,9 +3,21 @@ import React, { useState } from "react";
 import Education from "./education";
 import PersonalDetails from "./personal_details";
 import Skills from "./skills";
-import ResumeBuilder from "./experience";
+import Experience from "./experience";
 
 const Question = (props) => {
+  const [element, setElement] = useState("");
+  const [edu, setEdu] = useState([]);
+
+  const handleElement = (arr) => {
+    setElement(arr);
+    props.send(element);
+  };
+
+  const handleEdu = (ed) => {
+    setEdu(ed);
+    props.sendEducation(edu);
+  };
   return (
     <div>
       <div className="uppercase">
@@ -24,15 +36,15 @@ const Question = (props) => {
 
       {/* Skills */}
 
-      <Skills onChange={props.onChange} />
+      <Skills sendElement={handleElement} />
 
       {/* Education */}
 
-      <Education onChange={props.onChange} />
+      <Education sendedu={handleEdu} onChange={props.onChange} />
 
       {/* Experience */}
 
-      {/* <ResumeBuilder onChange={props.onChange} /> */}
+      {/* <Experience /> */}
     </div>
   );
 };

@@ -2,8 +2,10 @@ import React from "react";
 import { MdPhone } from "react-icons/md";
 import { HiMail } from "react-icons/hi";
 import { MdLocationOn } from "react-icons/md";
+import Education from "./education";
 
 const Output = (props) => {
+  // console.log(props.Skills);
   return (
     <div className="flex justify-center font-['Montserrat']">
       <div className="flex border-4 w-[610px]">
@@ -54,12 +56,14 @@ const Output = (props) => {
             <h2 className="uppercase text-red-700 font-bold my-3 w-[60%]">
               professional skills
             </h2>
-            <div className="grid grid-cols-3 gap-1 text-xs">
-              <div>Microsoft</div>
-              <div>Microsoft</div>
-              <div>Microsoft</div>
-              <div>Microsoft</div>
-              <div>Microsoft</div>
+            <div className="flex flex-wrap w-fit">
+              {props.Skills.slice(1).map((skill, index) => (
+                <div className="text-white bg-blue-700 mx-1 my-1 rounded-md">
+                  <div className="flex w-fit" key={index}>
+                    <div className="px-2 py-1">{skill}</div>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
         </div>
@@ -70,9 +74,7 @@ const Output = (props) => {
             <h2 className="uppercase font-bold text-red-700 tracking-wide m-1 w-[60%]">
               about me
             </h2>
-            <div className="text-sm text-white ml-1">
-              {props.inputData.about}
-            </div>
+            <div className="text-sm ml-1">{props.inputData.about}</div>
           </section>
 
           {/* Education */}
@@ -81,8 +83,21 @@ const Output = (props) => {
             <h2 className="uppercase font-bold text-red-700 tracking-wide m-1 w-[60%]">
               Education
             </h2>
-            <div className="text-sm ml-1"></div>
-            {props.inputData.education}
+            <div className="text-sm ml-1">
+              {/* <div className="font-bold">{props.inputData.institution}</div> */}
+
+              {props.Education.map((edu, index) => (
+                <div className="text-white bg-blue-700 mx-1 my-1 rounded-md">
+                  <div className="flex w-fit" key={index}>
+                    <div className="px-2 py-1">{edu}</div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* {props.inputData.specialization} */}
+            {/* {props.inputData.from}
+            {props.inputData.to} */}
           </section>
         </div>
       </div>
