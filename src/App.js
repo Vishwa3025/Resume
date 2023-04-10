@@ -10,7 +10,6 @@ class App extends Component {
   state = {
     inputData: {},
     Skills: [],
-    Education: []
 
   };
 
@@ -27,11 +26,6 @@ class App extends Component {
     }));
   };
 
-  handleEdu = (edu) => {
-    this.setState(() => ({
-      Education: [...this.state.Education, edu]
-    }));
-  }
 
   handleDownload = () => {
     const node = this.refs.downloadRef;
@@ -47,10 +41,10 @@ class App extends Component {
   render() {
     return (
       <div className="m-0 flex">
-        <div className="w-1/4 p-2 ques h-auto m-2"><Question onChange={this.handleChange} send={this.handleSkills} sendEducation={this.handleEdu} /></div>
+        <div className="w-1/4 p-2 ques h-auto m-2"><Question onChange={this.handleChange} send={this.handleSkills} /></div>
         <div className='w-3/4 flex-col'>
           <div className="p-2 border-4 w-fit h-fit m-2" ref="downloadRef">
-            <Output ref="downloadRef" inputData={this.state.inputData} Skills={this.state.Skills} Education={this.state.Education} />
+            <Output ref="downloadRef" inputData={this.state.inputData} Skills={this.state.Skills} />
           </div>
           <button onClick={this.handleDownload}>Download</button>
         </div>

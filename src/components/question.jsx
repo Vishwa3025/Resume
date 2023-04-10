@@ -14,10 +14,6 @@ const Question = (props) => {
     props.send(element);
   };
 
-  const handleEdu = (ed) => {
-    setEdu(ed);
-    props.sendEducation(edu);
-  };
   return (
     <div>
       <div className="uppercase">
@@ -40,7 +36,7 @@ const Question = (props) => {
 
       {/* Education */}
 
-      <Education sendedu={handleEdu} onChange={props.onChange} />
+      <Education onChange={props.onChange} />
 
       {/* Experience */}
 

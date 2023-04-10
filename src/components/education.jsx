@@ -27,7 +27,6 @@ const Education = (props) => {
     const newList = [...educationList];
     newList[index][name] = value;
     setEducationList(newList);
-    props.sendedu(educationList);
   };
 
   return (
