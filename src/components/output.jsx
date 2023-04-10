@@ -57,7 +57,7 @@ const Output = (props) => {
               professional skills
             </h2>
             <div className="flex flex-wrap w-fit">
-              {props.Skills.slice(1).map((skill, index) => (
+              {props.Skills.map((skill, index) => (
                 <div className="text-white bg-blue-700 mx-1 my-1 rounded-md">
                   <div className="flex w-fit" key={index}>
                     <div className="px-2 py-1">{skill}</div>
@@ -86,13 +86,13 @@ const Output = (props) => {
             <div className="text-sm ml-1">
               {/* <div className="font-bold">{props.inputData.institution}</div> */}
 
-              {props.Education.map((edu, index) => (
+              {/* {props.Education.map((edu, index) => (
                 <div className="text-white bg-blue-700 mx-1 my-1 rounded-md">
                   <div className="flex w-fit" key={index}>
                     <div className="px-2 py-1">{edu}</div>
                   </div>
                 </div>
-              ))}
+              ))} */}
             </div>
 
             {/* {props.inputData.specialization} */}
