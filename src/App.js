@@ -9,7 +9,6 @@ class App extends Component {
 
   state = {
     inputData: {},
-    Skills: [],
 
   };
 
@@ -19,13 +18,6 @@ class App extends Component {
     });
   }
 
-  handleSkills = (ele) => {
-    this.setState(prevState => ({
-      // Skills: prevState.Skills.filter(ele => ele !== ""),
-      Skills: [...this.state.Skills, ele]
-    }));
-  };
-
 
   handleDownload = () => {
     const node = this.refs.downloadRef;
@@ -33,20 +25,20 @@ class App extends Component {
       .then((canvas) => {
         const imgData = canvas.toDataURL('image/png');
         const pdf = new jspdf();
-        pdf.addImage(imgData, 'PNG', 0, 0);
+        pdf.addImage(imgData, 'PDF', 0, 0);
         pdf.save("download.pdf");
       })
   }
 
   render() {
     return (
-      <div className="m-0 flex">
-        <div className="w-1/4 p-2 ques h-auto m-2"><Question onChange={this.handleChange} send={this.handleSkills} /></div>
+      <div className="m-0 overflow-y-hidden flex">
+        <div className="w-1/4 overflow-y-auto p-2 ques h-auto m-2"><Question onChange={this.handleChange} /></div>
         <div className='w-3/4 flex-col'>
-          <div className="p-2 border-4 w-fit h-fit m-2" ref="downloadRef">
-            <Output ref="downloadRef" inputData={this.state.inputData} Skills={this.state.Skills} />
+          <div className="p-2 shadow-xl mx-40 w-fit h-fit m-2" ref="downloadRef">
+            <Output ref="downloadRef" inputData={this.state.inputData} />
           </div>
-          <button onClick={this.handleDownload}>Download</button>
+          <button className='px-3 py-2 mx-2 rounded-md text-white bg-blue-700 mx-96 my-4' onClick={this.handleDownload}>Download</button>
         </div>
       </div >
     )

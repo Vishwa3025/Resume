@@ -1,38 +1,36 @@
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
-const Education = (props) => {
+const Education = () => {
+  const dispatch = useDispatch();
+  const edu = useSelector((state) => state.education);
+
   const [educationOpen, setEducationOpen] = useState(false);
-  const [educationList, setEducationList] = useState([]);
 
   const toggleDropdown3 = () => {
     setEducationOpen(!educationOpen);
   };
 
-  const handleAddEducation = () => {
-    setEducationList([
-      ...educationList,
-      { institution: "", from: "", to: "", specialization: "" },
-    ]);
-  };
-  // console.log(educationList);
+  function handleSubmit(event) {
+    event.preventDefault();
+    const institution = event.target.institution.value;
+    const from = event.target.from.value;
+    const to = event.target.to.value;
+    const specialization = event.target.specialization.value;
+    const edu = { institution, from, to, specialization };
+    dispatch({ type: "ADD_EDU", payload: edu });
+    event.target.reset();
+  }
 
-  const handleDeleteEducation = (index) => {
-    const newList = [...educationList];
-    newList.splice(index, 1);
-    setEducationList(newList);
-  };
-
-  const handleEducationChange = (e, index) => {
-    const { name, value } = e.target;
-    const newList = [...educationList];
-    newList[index][name] = value;
-    setEducationList(newList);
-  };
+  function handleRemoveEducation(edu) {
+    dispatch({ type: "REMOVE_EDU", payload: edu });
+  }
 
   return (
-    <div className="font-['Montserrat']">
+    <div className="">
       <button
-        className="font-bold p-1 my-8 text-xl w-full text-start flex justify-between font-['Montserrat']"
+        className="font-bold p-1 text-lg w-full text-start flex justify-between my-8 uppercase font-['Cormorant Garamond',serif]"
         onClick={toggleDropdown3}>
         Education
         <i
@@ -43,81 +41,81 @@ const Education = (props) => {
       </button>
       {educationOpen && (
         <>
-          <button
-            className="px-5 py-1 mx-1 text-lg rounded-md text-white bg-blue-700"
-            onClick={handleAddEducation}>
-            Add Education
-          </button>
-          {educationList.map((education, index) => (
-            <div
-              className=" border border-blue-600 rounded-md px-2 my-2"
-              key={index}>
-              <div className="p-1">
-                <label className="text-gray-900 text-lg p-1" htmlFor="job">
-                  <i class="px-1 fa-sharp fa-solid fa-building-columns"></i>
-                  Institution
-                </label>
-                <input
-                  type="text"
-                  name="institution"
-                  value={education.institution}
-                  className="w-full px-3 py-1 my-1 border border-gray-300 rounded-md focus:outline-none"
-                  onChange={(e) => handleEducationChange(e, index)}
-                  onInput={props.onChange}
-                />
-              </div>
-              <div className="flex">
-                <div className="p-2 flex flex-col">
-                  <label className="text-gray-900 p-1" htmlFor="firstname">
-                    <i class="fa-solid fa-calendar px-1"></i>
-                    From
-                  </label>
-                  <input
-                    type="text"
-                    name="from"
-                    value={education.from}
-                    className="w-full px-3 py-1 my-1 border border-gray-300 rounded-md focus:outline-none"
-                    onChange={(e) => handleEducationChange(e, index)}
-                    onInput={props.onChange}
-                  />
-                </div>
-                <div className="p-2 flex flex-col">
-                  <label className="text-gray-900 p-1" htmlFor="lastname">
-                    <i class="fa-solid fa-calendar px-1"></i>
-                    To
-                  </label>
-                  <input
-                    type="text"
-                    name="to"
-                    value={education.to}
-                    className="w-full px-3 py-1 my-1 border border-gray-300 rounded-md focus:outline-none"
-                    onChange={(e) => handleEducationChange(e, index)}
-                    onInput={props.onChange}
-                  />
-                </div>
-              </div>
-
-              <div className="p-1">
-                <label className="text-gray-900 text-lg p-1" htmlFor="job">
-                  <i class="px-1 fa-solid fa-graduation-cap"></i>
-                  Specialization
-                </label>
-                <input
-                  type="text"
-                  name="specialization"
-                  value={education.specialization}
-                  className="w-full px-3 py-1 my-1 border border-gray-300 rounded-md focus:outline-none"
-                  onChange={(e) => handleEducationChange(e, index)}
-                  onInput={props.onChange}
-                />
-              </div>
-              <button
-                className="px-4 py-1 mx-1 my-2 text-lg rounded-md text-white bg-blue-700"
-                onClick={() => handleDeleteEducation(index)}>
-                Delete
-              </button>
+          <form
+            onSubmit={handleSubmit}
+            className="shadow-lg rounded-md px-2 my-2">
+            <div className="p-1">
+              <label
+                className="text-gray-900 text-lg p-1"
+                htmlFor="institution">
+                <i class="px-1 fa-sharp fa-solid fa-building-columns"></i>
+                Institution
+              </label>
+              <input
+                type="text"
+                name="institution"
+                className="w-full px-3 py-1 my-1 border border-gray-300 rounded-md focus:outline-none"
+              />
             </div>
-          ))}
+            <div className="flex">
+              <div className="p-2 flex flex-col">
+                <label className="text-gray-900 p-1" htmlFor="from">
+                  <i class="fa-solid fa-calendar px-1"></i>
+                  From
+                </label>
+                <input
+                  type="text"
+                  name="from"
+                  className="w-full px-3 py-1 my-1 border border-gray-300 rounded-md focus:outline-none"
+                />
+              </div>
+              <div className="p-2 flex flex-col">
+                <label className="text-gray-900 p-1" htmlFor="to">
+                  <i class="fa-solid fa-calendar px-1"></i>
+                  To
+                </label>
+                <input
+                  type="text"
+                  name="to"
+                  className="w-full px-3 py-1 my-1 border border-gray-300 rounded-md focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <div className="p-1">
+              <label
+                className="text-gray-900 text-lg p-1"
+                htmlFor="specialization">
+                <i class="px-1 fa-solid fa-graduation-cap"></i>
+                Specialization
+              </label>
+              <input
+                type="text"
+                name="specialization"
+                className="w-full px-3 py-1 my-1 border border-gray-300 rounded-md focus:outline-none"
+              />
+            </div>
+            <button
+              className="px-4 py-1 mx-1 my-2 text-lg rounded-md text-white bg-blue-700"
+              type="submit">
+              Add Education
+            </button>
+
+            {edu.map((ed, index) => (
+              <div>
+                <div
+                  className="p-2 m-2 rounded-md text-white uppercase text-sm bg-blue-500"
+                  key={index}>
+                  {index + 1}
+                  {". "}
+                  {ed.institution}
+                  <button onClick={() => handleRemoveEducation(ed)}>
+                    <i class="fa-solid fa-trash text-black px-1"></i>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </form>
         </>
       )}
     </div>
