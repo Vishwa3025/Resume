@@ -8,7 +8,7 @@ const LandingPage = () => {
   return (
     <>
       <section>
-        <div className="flex py-5 md:text-xl lg:text-3xl font-semibold mt-5 tracking-wide py-5 px-20 font-['Catamaran']">
+        <div className="flex py-5 md:text-xl lg:text-3xl font-semibold mt-5 tracking-wide px-14 md:px-20 font-['Catamaran']">
           <div>
             <img
               src={icon}
@@ -21,21 +21,21 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <section className="flex p-5 ">
-        <div className="w-1/2 md:px-10 lg:py-3 lg:px-10 xl:p-10">
+      <section className="flex flex-col md:flex-row p-5 ">
+        <div className="md:w-1/2 md:px-10 lg:py-3 lg:px-10 xl:p-10">
           <div className="font-semibold font-['Catamaran']">
-            <div className="lg:mt-12 xl:mt-16 py-1 md:text-2xl lg:text-[27px] xl:text-4xl">
+            <div className="lg:mt-12 xl:mt-16 py-1 text-xl md:text-2xl lg:text-[27px] xl:text-4xl">
               Resume Builder (and CV Formate)
             </div>
-            <div className=" py-1 md:text-base lg:text-[27px] xl:text-4xl">
+            <div className=" py-1 text-xl md:text-base lg:text-[27px] xl:text-4xl">
               Create Dream and Aspirations for
             </div>
-            <div className=" py-1 md:text-base lg:text-[28px] xl:text-4xl">
+            <div className=" py-1 text-xl md:text-base lg:text-[28px] xl:text-4xl">
               A Better Job
             </div>
           </div>
 
-          <div className="md:text-sm lg:text-base xl:text-lg font-['Catamaran']">
+          <div className="text-xs md:text-sm lg:text-base xl:text-lg font-['Catamaran']">
             <div className="font-medium mt-10">
               Your dream job is just a few clicks away with our intuitive resume
               builder.
@@ -58,7 +58,7 @@ const LandingPage = () => {
             </Link>
           </div>
         </div>
-        <div className="w-1/2 lg:p-10">
+        <div className="md:w-1/2 mt-10 md:m-0 lg:p-10">
           <img src={i} alt="" />
         </div>
 
