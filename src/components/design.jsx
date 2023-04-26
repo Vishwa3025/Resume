@@ -20,7 +20,8 @@ class Design extends Component {
 
   handleDownload = () => {
     const node = this.refs.downloadRef;
-    html2canvas(node).then((canvas) => {
+    const componentHeight = node.clientHeight;
+    html2canvas(node, { height: componentHeight }).then((canvas) => {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jspdf();
       pdf.addImage(imgData, "PDF", 0, 0);

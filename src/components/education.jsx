@@ -30,7 +30,7 @@ const Education = () => {
   return (
     <div className="">
       <button
-        className="font-black p-1 text-lg w-full text-start flex justify-between my-8 uppercase font-['Catamaran',serif]"
+        className="font-black p-1 text-lg w-full text-start flex justify-between my-8 uppercase font-['Catamaran']"
         onClick={toggleDropdown3}>
         Education
         <i
@@ -41,85 +41,89 @@ const Education = () => {
       </button>
       {educationOpen && (
         <>
-          <form
-            onSubmit={handleSubmit}
-            className="shadow-lg rounded-md px-2 my-2 font-['Catamaran']">
-            <div className="p-1">
-              <label
-                className="text-gray-900 font-semibold text-lg p-1"
-                htmlFor="institution">
-                <i class="px-1 fa-sharp fa-solid fa-building-columns"></i>
-                Institution
-              </label>
-              <input
-                type="text"
-                name="institution"
-                className="w-full px-3 py-1 my-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
-              />
-            </div>
-            <div className="flex">
-              <div className="p-2 flex flex-col">
+          <div className="transition-all duration-300 ease-in-out">
+            <form
+              onSubmit={handleSubmit}
+              className="shadow-lg rounded-md px-2 my-2 font-['Catamaran']">
+              <div className="p-1">
                 <label
-                  className="text-gray-900 font-semibold p-1"
-                  htmlFor="from">
-                  <i class="fa-solid fa-calendar px-1"></i>
-                  From
+                  className="text-gray-900 font-semibold text-lg p-1"
+                  htmlFor="institution">
+                  <i class="px-1 fa-sharp fa-solid fa-building-columns"></i>
+                  Institution
                 </label>
                 <input
                   type="text"
-                  name="from"
+                  name="institution"
                   className="w-full px-3 py-1 my-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
                 />
               </div>
-              <div className="p-2 flex flex-col">
-                <label className="text-gray-900 font-semibold p-1" htmlFor="to">
-                  <i class="fa-solid fa-calendar px-1"></i>
-                  To
-                </label>
-                <input
-                  type="text"
-                  name="to"
-                  className="w-full px-3 py-1 my-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
-                />
-              </div>
-            </div>
-
-            <div className="p-1">
-              <label
-                className="text-gray-900 font-semibold text-lg p-1"
-                htmlFor="specialization">
-                <i class="px-1 fa-solid fa-graduation-cap"></i>
-                Specialization
-              </label>
-              <input
-                type="text"
-                name="specialization"
-                className="w-full px-3 py-1 my-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
-              />
-            </div>
-            <button
-              className="md:px-3 lg:px-1 xl:px-3 md:py-2 lg:py-1 xl:py-2 my-5 lg:text-xs xl:text-sm w-auto rounded-md text-white font-semibold font-['Catamaran'] uppercase bg-blue-600"
-              type="submit">
-              Add Education
-            </button>
-
-            {edu.map((ed, index) => (
-              <div>
-                <div
-                  className="p-1 m-2 flex rounded-md text-white uppercase text-xs font-['Catamaran']"
-                  key={index}>
-                  <div className="font-bold text-black py-1">
-                    {ed.institution}
-                  </div>
-                  <button onClick={() => handleRemoveEducation(ed)}>
-                    <div className="bg-red-400 p-1 rounded-md shadow-xl mx-2">
-                      <i class="fa-solid fa-trash text-white px-1"></i>
-                    </div>
-                  </button>
+              <div className="flex">
+                <div className="p-2 flex flex-col">
+                  <label
+                    className="text-gray-900 font-semibold p-1"
+                    htmlFor="from">
+                    <i class="fa-solid fa-calendar px-1"></i>
+                    From
+                  </label>
+                  <input
+                    type="text"
+                    name="from"
+                    className="w-full px-3 py-1 my-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
+                  />
+                </div>
+                <div className="p-2 flex flex-col">
+                  <label
+                    className="text-gray-900 font-semibold p-1"
+                    htmlFor="to">
+                    <i class="fa-solid fa-calendar px-1"></i>
+                    To
+                  </label>
+                  <input
+                    type="text"
+                    name="to"
+                    className="w-full px-3 py-1 my-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
+                  />
                 </div>
               </div>
-            ))}
-          </form>
+
+              <div className="p-1">
+                <label
+                  className="text-gray-900 font-semibold text-lg p-1"
+                  htmlFor="specialization">
+                  <i class="px-1 fa-solid fa-graduation-cap"></i>
+                  Specialization
+                </label>
+                <input
+                  type="text"
+                  name="specialization"
+                  className="w-full px-3 py-1 my-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
+                />
+              </div>
+              <button
+                className="md:px-3 lg:px-1 xl:px-3 md:py-2 lg:py-1 xl:py-2 my-5 lg:text-xs xl:text-sm w-auto rounded-md text-white font-semibold font-['Catamaran'] uppercase bg-blue-600"
+                type="submit">
+                Add Education
+              </button>
+
+              {edu.map((ed, index) => (
+                <div>
+                  <div
+                    className="p-1 m-2 flex rounded-md text-white uppercase text-xs font-['Catamaran']"
+                    key={index}>
+                    <div className="font-bold text-black py-1">
+                      {ed.institution}
+                    </div>
+                    <button onClick={() => handleRemoveEducation(ed)}>
+                      <div className="bg-red-400 p-1 rounded-md shadow-xl mx-2">
+                        <i class="fa-solid fa-trash text-white px-1"></i>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </form>
+          </div>
         </>
       )}
     </div>
