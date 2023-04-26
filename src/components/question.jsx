@@ -1,20 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import Education from "./education";
 import PersonalDetails from "./personal_details";
 import Skills from "./skills";
 import Experience from "./experience";
 
 const Question = (props) => {
-  const [element, setElement] = useState("");
-  const [edu, setEdu] = useState([]);
-
-  const handleElement = (arr) => {
-    setElement(arr);
-    props.send(element);
-  };
-
   return (
-    <div className="">
+    <div className="p-3 h-screen">
       <div className="uppercase">
         <div className="text-2xl text-blue-600 font-bold px-5 py-2">
           cv settings
@@ -33,7 +25,7 @@ const Question = (props) => {
 
       {/* Skills */}
 
-      <Skills sendElement={handleElement} />
+      <Skills />
 
       {/* Education */}
 

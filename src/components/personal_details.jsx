@@ -10,7 +10,7 @@ const PersonalDetails = (props) => {
   return (
     <>
       <button
-        className="font-bold p-1 text-lg w-full text-start flex justify-between my-8 uppercase font-['Cormorant Garamond',serif]"
+        className="font-black p-1 text-lg w-full text-start flex justify-between my-8 uppercase font-['Catamaran']"
         onClick={toggleDropdown1}>
         Personal Details
         <i
@@ -20,8 +20,8 @@ const PersonalDetails = (props) => {
         />
       </button>
       {personalDetailsOpen && (
-        <div className="transition duration-500 ease-out ">
-          <div className="flex flex-col rounded-md shadow-sm font-['Times New Roman']">
+        <div className="transition duration-500 ease-in-out ">
+          <div className="flex flex-col rounded-md shadow-sm font-['Catamaran']">
             <div className="p-1">
               <label className="text-gray-900 p-1 font-semibold" htmlFor="job">
                 Job Title / Current Position
@@ -29,7 +29,7 @@ const PersonalDetails = (props) => {
               <input
                 type="text"
                 name="job"
-                className="w-full px-3 py-1 border border-gray-300 rounded-md focus:outline-none"
+                className="w-full px-3 py-1 border border-gray-300 rounded-md shadow-md focus:outline-none"
                 onChange={props.onChange}
               />
             </div>
@@ -44,7 +44,7 @@ const PersonalDetails = (props) => {
                 <input
                   type="text"
                   name="firstName"
-                  className="w-[75%] px-3 py-1 border border-gray-300 rounded-md focus:outline-none"
+                  className="w-[75%] px-3 py-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
                   onChange={props.onChange}
                 />
               </div>
@@ -58,7 +58,7 @@ const PersonalDetails = (props) => {
                 <input
                   type="text"
                   name="lastName"
-                  className="w-[75%] px-3 py-1 border border-gray-300 rounded-md focus:outline-none"
+                  className="w-[75%] px-3 py-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
                   onChange={props.onChange}
                 />
               </div>
@@ -71,7 +71,7 @@ const PersonalDetails = (props) => {
               <input
                 type="text"
                 name="email"
-                className="w-full px-3 py-1 border border-gray-300 rounded-md focus:outline-none"
+                className="w-full px-3 py-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
                 onChange={props.onChange}
               />
             </div>
@@ -86,7 +86,7 @@ const PersonalDetails = (props) => {
                 <input
                   type="text"
                   name="location"
-                  className="w-[80%] px-3 py-1 border border-gray-300 rounded-md focus:outline-none"
+                  className="w-[80%] px-3 py-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
                   onChange={props.onChange}
                 />
               </div>
@@ -100,7 +100,7 @@ const PersonalDetails = (props) => {
                 <input
                   type="text"
                   name="phone"
-                  className="w-[85%] px-3 py-1 border border-gray-300 rounded-md focus:outline-none"
+                  className="w-[85%] px-3 py-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
                   onChange={props.onChange}
                 />
               </div>
@@ -112,7 +112,7 @@ const PersonalDetails = (props) => {
               <textarea
                 type="text"
                 name="about"
-                className="w-full px-3 py-1 resize-width border border-gray-300 rounded-md focus:outline-none"
+                className="w-full px-3 py-1 resize-width border border-gray-300 shadow-md rounded-md focus:outline-none"
                 rows={5}
                 onChange={props.onChange}
               />

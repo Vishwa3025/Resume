@@ -30,7 +30,7 @@ const Education = () => {
   return (
     <div className="">
       <button
-        className="font-bold p-1 text-lg w-full text-start flex justify-between my-8 uppercase font-['Cormorant Garamond',serif]"
+        className="font-black p-1 text-lg w-full text-start flex justify-between my-8 uppercase font-['Catamaran',serif]"
         onClick={toggleDropdown3}>
         Education
         <i
@@ -43,10 +43,10 @@ const Education = () => {
         <>
           <form
             onSubmit={handleSubmit}
-            className="shadow-lg rounded-md px-2 my-2">
+            className="shadow-lg rounded-md px-2 my-2 font-['Catamaran']">
             <div className="p-1">
               <label
-                className="text-gray-900 text-lg p-1"
+                className="text-gray-900 font-semibold text-lg p-1"
                 htmlFor="institution">
                 <i class="px-1 fa-sharp fa-solid fa-building-columns"></i>
                 Institution
@@ -54,37 +54,39 @@ const Education = () => {
               <input
                 type="text"
                 name="institution"
-                className="w-full px-3 py-1 my-1 border border-gray-300 rounded-md focus:outline-none"
+                className="w-full px-3 py-1 my-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
               />
             </div>
             <div className="flex">
               <div className="p-2 flex flex-col">
-                <label className="text-gray-900 p-1" htmlFor="from">
+                <label
+                  className="text-gray-900 font-semibold p-1"
+                  htmlFor="from">
                   <i class="fa-solid fa-calendar px-1"></i>
                   From
                 </label>
                 <input
                   type="text"
                   name="from"
-                  className="w-full px-3 py-1 my-1 border border-gray-300 rounded-md focus:outline-none"
+                  className="w-full px-3 py-1 my-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
                 />
               </div>
               <div className="p-2 flex flex-col">
-                <label className="text-gray-900 p-1" htmlFor="to">
+                <label className="text-gray-900 font-semibold p-1" htmlFor="to">
                   <i class="fa-solid fa-calendar px-1"></i>
                   To
                 </label>
                 <input
                   type="text"
                   name="to"
-                  className="w-full px-3 py-1 my-1 border border-gray-300 rounded-md focus:outline-none"
+                  className="w-full px-3 py-1 my-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
                 />
               </div>
             </div>
 
             <div className="p-1">
               <label
-                className="text-gray-900 text-lg p-1"
+                className="text-gray-900 font-semibold text-lg p-1"
                 htmlFor="specialization">
                 <i class="px-1 fa-solid fa-graduation-cap"></i>
                 Specialization
@@ -92,11 +94,11 @@ const Education = () => {
               <input
                 type="text"
                 name="specialization"
-                className="w-full px-3 py-1 my-1 border border-gray-300 rounded-md focus:outline-none"
+                className="w-full px-3 py-1 my-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
               />
             </div>
             <button
-              className="px-4 py-1 mx-1 my-2 text-lg rounded-md text-white bg-blue-700"
+              className="md:px-3 lg:px-1 xl:px-3 md:py-2 lg:py-1 xl:py-2 my-5 lg:text-xs xl:text-sm w-auto rounded-md text-white font-semibold font-['Catamaran'] uppercase bg-blue-600"
               type="submit">
               Add Education
             </button>
@@ -104,13 +106,15 @@ const Education = () => {
             {edu.map((ed, index) => (
               <div>
                 <div
-                  className="p-2 m-2 rounded-md text-white uppercase text-sm bg-blue-500"
+                  className="p-1 m-2 flex rounded-md text-white uppercase text-xs font-['Catamaran']"
                   key={index}>
-                  {index + 1}
-                  {". "}
-                  {ed.institution}
+                  <div className="font-bold text-black py-1">
+                    {ed.institution}
+                  </div>
                   <button onClick={() => handleRemoveEducation(ed)}>
-                    <i class="fa-solid fa-trash text-black px-1"></i>
+                    <div className="bg-red-400 p-1 rounded-md shadow-xl mx-2">
+                      <i class="fa-solid fa-trash text-white px-1"></i>
+                    </div>
                   </button>
                 </div>
               </div>

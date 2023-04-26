@@ -62,7 +62,7 @@ const Output = (props) => {
             </h2>
             <div className="flex flex-wrap w-fit">
               {tskill.map((skill, index) => (
-                <div className="text-white bg-blue-600 mx-1 my-1 rounded-md">
+                <div className="text-black bg-white mx-1 my-1 rounded-md">
                   <div className="flex w-fit" key={index}>
                     <div className="px-2 py-1">{skill}</div>
                   </div>
@@ -82,7 +82,7 @@ const Output = (props) => {
             </ol>
           </section>
         </div>
-        <div className="cv_main w-2/3 px-3 py-3">
+        <div className="cv_main w-2/3 bg-white px-3 py-3">
           {/* About */}
 
           <section className="pb-1 border-b-2 w-full">

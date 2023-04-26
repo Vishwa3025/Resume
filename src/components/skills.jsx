@@ -37,7 +37,7 @@ const Skills = () => {
   return (
     <>
       <button
-        className="font-bold p-1 my-8 text-lg w-full text-start flex justify-between uppercase font-['Times New Roman']"
+        className="font-black p-1 my-8 text-lg w-full text-start flex justify-between uppercase font-['Catamaran']"
         onClick={toggleDropdown2}>
         Skills
         <i
@@ -48,7 +48,7 @@ const Skills = () => {
       </button>
       {skillsOpen && (
         <>
-          <div className="font-['Times New Roman']  ">
+          <div className="font-['Catamaran']  ">
             <div className="flex flex-col rounded-md shadow-sm transition ease-in-out border-3">
               <div className="flex flex-col p-1">
                 <label
@@ -63,11 +63,11 @@ const Skills = () => {
                   <input
                     type="text"
                     name="tskill"
-                    className="col-span-2 px-3 py-1 border border-gray-300 rounded-md focus:outline-none"
+                    className="col-span-2 px-3 py-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
                   />
                   <button
                     type="submit"
-                    className="px-1 mx-2 text-sm rounded-md text-white font-semibold font-['Times New Roman'] uppercase bg-blue-600">
+                    className="mx-2 lg:text-xs px-1 text-sm rounded-md text-white font-medium uppercase bg-blue-600">
                     Add Skill
                   </button>
                 </form>
@@ -103,11 +103,11 @@ const Skills = () => {
                   <input
                     type="text"
                     name="sskill"
-                    className="col-span-2 px-3 py-1 border border-gray-300 rounded-md focus:outline-none"
+                    className="col-span-2 px-3 py-1 border border-gray-300 shadow-md rounded-md focus:outline-none"
                   />
                   <button
                     type="submit"
-                    className="px-1 mx-2 text-sm rounded-md text-white font-semibold font-['Times New Roman'] uppercase bg-blue-600">
+                    className="mx-2 lg:text-xs px-1 xl:text-sm rounded-md text-white font-medium uppercase bg-blue-600">
                     Add Skill
                   </button>
                 </form>
