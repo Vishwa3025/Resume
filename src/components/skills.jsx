@@ -107,7 +107,7 @@ const Skills = () => {
                   />
                   <button
                     type="submit"
-                    className="mx-2 lg:text-xs px-1 xl:text-sm rounded-md text-white font-medium uppercase bg-blue-600">
+                    className="mx-2 lg:text-xs px-1 text-sm rounded-md text-white font-medium uppercase bg-blue-600">
                     Add Skill
                   </button>
                 </form>
