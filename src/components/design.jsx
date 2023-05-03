@@ -25,7 +25,7 @@ class Design extends Component {
       const imgData = canvas.toDataURL("image/png");
       const pdf = new jspdf();
       pdf.addImage(imgData, "PDF", 0, 0);
-      pdf.save("download.pdf");
+      pdf.save("Resume.pdf");
     });
   };
 

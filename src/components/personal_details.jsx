@@ -10,7 +10,7 @@ const PersonalDetails = (props) => {
   return (
     <>
       <button
-        className="font-black p-1 text-lg w-full text-start flex justify-between my-8 uppercase font-['Catamaran']"
+        className="font-black p-1 text-lg w-full text-start flex justify-between my-8 uppercase font-['Catamaran']  "
         onClick={toggleDropdown1}>
         Personal Details
         <i
