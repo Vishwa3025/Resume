@@ -10,7 +10,7 @@ const PersonalDetails = (props) => {
   return (
     <>
       <button
-        className="font-black p-1 text-lg w-full text-start flex justify-between my-8 uppercase font-['Catamaran']  "
+        className="font-black p-1 text-lg w-full text-start flex justify-between my-8 uppercase font-['Catamaran'] "
         onClick={toggleDropdown1}>
         Personal Details
         <i
@@ -20,8 +20,8 @@ const PersonalDetails = (props) => {
         />
       </button>
       {personalDetailsOpen && (
-        <div className="transition duration-500 ease-in-out ">
-          <div className="flex flex-col rounded-md shadow-sm font-['Catamaran']">
+        <div className="transition duration-150 ease-in-out ">
+          <div className="flex flex-col rounded-md shadow-sm font-['Catamaran'] ">
             <div className="p-1">
               <label className="text-gray-900 p-1 font-semibold" htmlFor="job">
                 Job Title / Current Position
