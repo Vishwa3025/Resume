@@ -49,7 +49,7 @@ const Output = (props) => {
                 <div className="p-0.5 m-0.5">
                   <MdLocationOn />
                 </div>
-                {pro ps.inputData.location}
+                {props.inputData.location}
               </div>
             </div>
           </section>
