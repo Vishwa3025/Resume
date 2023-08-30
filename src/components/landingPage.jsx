@@ -17,7 +17,7 @@ const LandingPage = () => {
               srcset=""
             />
           </div>
-          <div className="mx-2 mt-3">Resume Builder</div>
+          <div className="mx-2 mt-3">Resumes Made Easy!</div>
         </div>
       </section>
 
