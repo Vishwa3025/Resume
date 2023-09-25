@@ -4,7 +4,7 @@ import PersonalDetails from "./personal_details";
 import Skills from "./skills";
 import Experience from "./experience";
 // import { Player } from "video-react";
-import v from "../assests/Dashboard.mp4";
+import v from "../assests/1.mp4";
 // import 'video-react/dist/video-react.css'; // import the video-react styles
 
 const Question = (props) => {
